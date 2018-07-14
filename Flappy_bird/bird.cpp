@@ -1,12 +1,10 @@
 #include "bird.hpp"
 
+void bird::Update() {
+	// ˆÚ“®‚ÆÕ“Ë”»’è‚ğ‚µ‚½‚¢
 
-
-bird::bird()
-{
 }
 
-
-bird::~bird()
-{
+void bird::flap() {
+	move({ 0,velocity });
 }

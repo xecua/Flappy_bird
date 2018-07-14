@@ -1,4 +1,8 @@
-﻿#include "bird.hpp"
+﻿#include <Siv3D.hpp> // OpenSiv3D v0.2.7
+#include <HamFramework.hpp> // Scene Management
+
+#include "Title.hpp"
+#include "Mainscene.hpp"
 
 void Main()
 {
