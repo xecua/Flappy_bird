@@ -197,6 +197,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bird.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +262,10 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="App\example\test.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bird.hpp" />
+    <ClInclude Include="objects.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
