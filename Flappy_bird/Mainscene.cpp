@@ -1,12 +1,9 @@
-#include "Mainscene.h"
+#include "Mainscene.hpp"
 
+void Mainscene::Update() {
 
-
-Mainscene::Mainscene()
-{
 }
 
+void Mainscene::draw() {
 
-Mainscene::~Mainscene()
-{
 }

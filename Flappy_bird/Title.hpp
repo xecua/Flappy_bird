@@ -1,8 +1,9 @@
 #pragma once
-class Title
-{
+
+class Title : public MyApp::Scene {
 public:
 	Title();
-	~Title();
+	void Update() override;
+	void draw() override;
 };
 

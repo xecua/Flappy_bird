@@ -3,7 +3,6 @@
 
 class Ceil : public objects {
 public:
-	Ceil(const RectF r)
-		:objects(r,true) ;
+	Ceil()
+		:objects(RectF(Vec2(0,0),Window::Width,1),true) ;
 };
-

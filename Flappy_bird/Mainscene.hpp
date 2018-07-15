@@ -1,8 +1,11 @@
 #pragma once
-class Mainscene
-{
+#include "bird.hpp"
+
+class Mainscene : public MyApp {
 public:
-	Mainscene();
-	~Mainscene();
+	Mainscene(const InitData& init)
+		: IScene(init) {};
+	void Update() override;
+	void draw() override;
 };
 
