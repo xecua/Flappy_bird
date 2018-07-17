@@ -1,21 +1,28 @@
 #pragma once
-#include "BaseObject.hpp"
+#define width 600
+#define height 800
+#include <Siv3D.hpp>
 
-class Pole :public BaseObject{
+class Pole {
 private:
 	RectF under;
 	RectF over;
+	Vec2 pos;
+	Vec2 velocity;
 public:
-	Pole(const RectF r, const Vec2 v);
+	Pole();
 
-	bool intersect(const Rect& shape) const;
+	bool intersect(const RectF& shape) const;
 
-	void update() override;
+	Vec2 getPos() const;
 
-	void draw() const override;
+	void update();
+
+	void draw() const;
 
 	bool contain(const RectF& shape) const;
 };
+
 
 
 

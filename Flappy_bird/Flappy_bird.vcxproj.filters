@@ -245,8 +245,5 @@
     <ClInclude Include="Pole.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaseObject.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

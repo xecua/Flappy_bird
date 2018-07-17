@@ -1,12 +1,14 @@
+#include "Pole.hpp"
 #include "Bird.hpp"
 
 
-Bird::Bird(const RectF r, const Vec2 v) {
-	BaseObject(r, v);
+Bird::Bird() {
+	rect = Rect(0, 0, 50, 50);
+	velocity = { 0,0 };
 	gameover = false;
 }
 
-void Bird::hitCheck(const Pole &pole) {
+void Bird::hitCheck(const Pole& pole) {
 	if (pole.intersect(rect)) gameover = true;
 }
 
@@ -31,7 +33,7 @@ void Bird::update() {
 	rect.pos += velocity;
 }
 
-void Bird::draw() const{
+void Bird::draw() const {
 	rect.draw(Palette::Yellow);
 }
 
@@ -41,4 +43,12 @@ double Bird::getVel() const {
 
 bool Bird::isGameOver() const {
 	return gameover;
+}
+
+Vec2 Bird::getPos() const {
+	return rect.pos;
+}
+
+RectF Bird::getRect() const {
+	return rect;
 }

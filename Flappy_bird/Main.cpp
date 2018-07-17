@@ -1,20 +1,19 @@
-﻿// #include <HamFramework.hpp>
-#include "Bird.hpp"
+﻿#include "Bird.hpp"
 #include "Pole.hpp"
 
 void Main(){
 
 	Graphics::SetBackground(ColorF(0.8,0.9,1.0));
 
-	Bird player;
-
 	const Font font(50);
+
+	Bird player();
 
 	Array<std::unique_ptr<Pole>> poles;
 	
 	poles.emplace_back(new Pole());
 
-	// Pole pole;
+	// Pole pole
 
 	long long score = 0;
 
@@ -29,7 +28,6 @@ void Main(){
 		Print << player.getVel();
 		Print << Format(U"Score:",score);
 
-		// player
 		player.update();
 		player.draw();
 
@@ -65,9 +63,3 @@ void Main(){
 		}
 	}
 }
-
-/* ここからやりたいこと
-・ ゲームオーバーからリセットした場合に初期位置に戻す
-・ Poleの無限生成
-・スコア機能の実装
-*/

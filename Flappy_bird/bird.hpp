@@ -1,21 +1,27 @@
 #pragma once
-#include "BaseObject.hpp"
 #include "Pole.hpp"
 
-class Bird : public BaseObject{
+class Bird{
 private:
+	RectF rect;
+	Vec2 velocity;
 	bool gameover;
 public:
-	Bird(const RectF r, const Vec2 v);
+	Bird();
 
 	void hitCheck(const Pole &pole);
 
-	void update() override;
+	void update();
 
-	void draw() const override;
+	void draw() const;
 
 	double getVel() const;
 
 	bool isGameOver() const;
 
+	Vec2 getPos() const;
+
+	RectF getRect() const;
+
 };
+
