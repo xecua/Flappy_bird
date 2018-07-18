@@ -10,7 +10,7 @@ Pole::Pole() {
 	over.y = 0;
 	over.w = 50;
 	over.h = pos.y - 100;
-	velocity = { -20,0 };
+	velocity = { -10,0 };
 }
 
 bool Pole::intersect(const RectF& shape) const {
@@ -18,8 +18,9 @@ bool Pole::intersect(const RectF& shape) const {
 }
 
 void Pole::update(){
-	under.pos -= velocity;
-	over.pos -= velocity;
+	pos += velocity;
+	under.pos += velocity;
+	over.pos += velocity;
 }
 
 void Pole::draw() const {

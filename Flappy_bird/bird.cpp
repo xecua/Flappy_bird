@@ -1,7 +1,6 @@
 #include "Pole.hpp"
 #include "Bird.hpp"
 
-
 Bird::Bird() {
 	rect = Rect(0, 0, 50, 50);
 	velocity = { 0,0 };

@@ -1,10 +1,10 @@
 #pragma once
-#define width 600
-#define height 800
 #include <Siv3D.hpp>
 
 class Pole {
 private:
+	const int width = 800;
+	const int height = 600;
 	RectF under;
 	RectF over;
 	Vec2 pos;

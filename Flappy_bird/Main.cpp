@@ -1,4 +1,5 @@
-﻿#include "Bird.hpp"
+﻿#include <deque>
+#include "Bird.hpp"
 #include "Pole.hpp"
 
 void Main(){
@@ -7,19 +8,17 @@ void Main(){
 
 	const Font font(50);
 
-	Bird player();
+	Bird player = Bird();
 
-	Array<std::unique_ptr<Pole>> poles;
+	std::deque<std::unique_ptr<Pole>> poles;
 	
 	poles.emplace_back(new Pole());
-
-	// Pole pole
 
 	long long score = 0;
 
 	int counter = 0;
 
-	Window::Resize(width, height);
+	Window::Resize(800, 600);
 
 	while (System::Update()) {
 		// debug info
@@ -32,34 +31,34 @@ void Main(){
 		player.draw();
 
 		// 新規Poleの追加
-		if (++counter == 130) {
+		if (++counter == 150) {
 			poles.emplace_back(new Pole());
 			counter = 0;
 		}
 
 		// pole
-		if (!poles.isEmpty()) {
+		if (!poles.empty()) {
 			if (!player.isGameOver()) {
-				for (auto& p : poles) {
-					p->update();
+				for (unsigned int i = 0; i < poles.size();i++) {
+					poles[i]->update();
 				}
 			}
-			for(auto& p:poles){
-				p->draw();
+			for(unsigned int i = 0; i < poles.size(); i++){
+				Print << poles[i]->getPos();
+				poles[i]->draw();
 			}
-			if (poles[0]->getPos().x == 0 && !poles[0]->contain(player.getRect())) {
-				score++;
+			if (poles[0]->getPos().x == 0) {
+				if(!poles[0]->contain(player.getRect())) score++;
 				poles.pop_front();
 			}
+			player.hitCheck(*poles[0]);
 		}
-
-		//pole.draw();
-		//player.hitCheck(pole);
-		
 
 		// Gameover
 		if (player.isGameOver()) {
 			Print << U"Gameover!";
+			poles.clear();
+			counter = 0;
 		}
 	}
 }
