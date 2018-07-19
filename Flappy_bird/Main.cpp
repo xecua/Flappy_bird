@@ -5,6 +5,8 @@
 void Main(){
 
 	Graphics::SetBackground(ColorF(0.8,0.9,1.0));
+	
+    Window::SetTitle("Flppy Bird");
 
 	const Font font(50);
 
@@ -23,8 +25,6 @@ void Main(){
 	while (System::Update()) {
 		// debug info
 		ClearPrint();
-		Print << player.getPos();
-		Print << player.getVel();
 		Print << Format(U"Score:",score);
 
 		player.update();
@@ -44,7 +44,6 @@ void Main(){
 				}
 			}
 			for(unsigned int i = 0; i < poles.size(); i++){
-				Print << poles[i]->getPos();
 				poles[i]->draw();
 			}
 			if (poles[0]->getPos().x == 0) {
